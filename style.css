@@ -1,0 +1,304 @@
+/* ==========================================================================
+   1. Base Layout Resets & Global Image Fluidity
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #111111;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents unwanted horizontal layout breaking on phones */
+}
+
+/* Fluid Media Rule: Keeps local images from breaking boundaries */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. Fullscreen Landing Layout (Transparent Fixed Overlay Viewport)
+   ========================================================================== */
+.hero-fullscreen {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.25)), 
+                url('images/image 1.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    padding: 0 6%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0;
+    width: 100%;
+}
+
+.navbar .logo {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-links .nav-btn {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 10px 22px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar .nav-links .nav-btn:hover {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding-bottom: 60px;
+}
+
+.hero-content h1 {
+    font-size: 6.5rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+}
+
+.hero-content h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.hero-content .accent-line {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff;
+    margin-top: 25px;
+}
+
+/* ==========================================================================
+   3. Elevated Articles Grid Layout
+   ========================================================================== */
+.articles-section {
+    padding: 60px 6% 0 6%;
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 10;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #000000;
+    margin-top: 0; /* Forces cards up over the hero image */
+    background: #ffffff;
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background-color: #111111;
+    margin: 10px auto 60px auto;
+}
+
+/* Responsive CSS Grid Column Layout Strategy */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.article-card {
+    background-color: #ffffff;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 320px; 
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 40px 35px 60px 35px;
+}
+
+.card-line {
+    width: 35px;
+    height: 3px;
+    background-color: #111111;
+    margin: 0 auto 25px auto;
+}
+
+.article-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #000000;
+}
+
+/* ==========================================================================
+   4. Lower Base Sections (About, Subscribe, Footer)
+   ========================================================================== */
+.about-section, .subscribe-section {
+    padding: 80px 6% 0 6%;
+}
+
+.section-title-standard {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+    text-transform: lowercase;
+}
+
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #444444;
+    text-align: left;
+}
+
+.about-image {
+    flex: 1;
+    height: 450px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.subscribe-section {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.subscribe-section h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.subscribe-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    border-bottom: 2px solid #111111;
+}
+
+.subscribe-form input {
+    border: none;
+    outline: none;
+    padding: 12px 10px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.subscribe-form button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.footer {
+    border-top: 1px solid #eeeeee;
+    padding: 40px 6%;
+    text-align: center;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #888888;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    text-transform: lowercase;
+}
+
+/* ==========================================================================
+   5. Media Queries for Mobile Screens
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3.5rem; /* Scales heading down so it fits nicely on smartphone displays */
+    }
+    
+    .navbar .nav-links {
+        display: none; /* Simplifies clean look for small mobile devices */
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-top: -30px;
+    }
+
+    .about-content {
+        flex-direction: column-reverse; /* Stacks image above the summary text blocks */
+    }
+
+    .about-image {
+        height: 300px;
+        width: 100%;
+    }
+}
